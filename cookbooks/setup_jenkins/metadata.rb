@@ -1,0 +1,7 @@
+name 'setup_jenkins'
+maintainer 'Devin Lee'
+maintainer_email 'devin.lee@coveros.com'
+license 'all_rights'
+description 'Installs/Configures setup_jenkins'
+long_description 'Installs/Configures setup_jenkins'
+version '0.1.1'
