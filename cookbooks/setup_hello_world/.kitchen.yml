@@ -1,6 +1,7 @@
 ---
 driver:
-  name: /etc/docker
+  name: docker
+  binary: /etc/docker
 
 provisioner:
   name: chef_solo
