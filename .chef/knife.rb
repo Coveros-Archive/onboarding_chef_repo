@@ -9,3 +9,7 @@ validation_client_name   "devin-validator"
 validation_key           "#{current_dir}/devin-validator.pem"
 chef_server_url          "https://ec2-52-23-204-242.compute-1.amazonaws.com/organizations/devin"
 cookbook_path            ["#{current_dir}/../cookbooks"]
+
+# Amazon AWS
+knife[:aws_access_key_id] = ENV['AWS_ACCESS_KEY_ID']
+knife[:aws_secret_access_key] = ENV['AWS_SECRET_ACCESS_KEY']
