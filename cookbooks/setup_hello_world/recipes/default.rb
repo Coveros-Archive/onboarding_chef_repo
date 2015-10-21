@@ -24,7 +24,7 @@ end
 
 rpm_package 'hello-world-sample-random-gen-1.0.2-rpm' do
   action :install
-  source '/home/centos/hello-world-sample-random-gen-1.0.2-rpm.rpm'
+  source '/tmp/hello-world-sample-random-gen-1.0.2-rpm.rpm'
 end
 
 bash 'restart_tomcat' do
