@@ -30,6 +30,6 @@ end
 bash 'restart_tomcat' do
   cwd ::File.dirname('/tmp')
   code <<-EOH
-    sudo service tomcat restart
+    service tomcat restart
     EOH
 end
