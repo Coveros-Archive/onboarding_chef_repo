@@ -28,7 +28,7 @@ rpm_package 'hello-world-sample-random-gen-1.0.2-rpm' do
 end
 
 bash 'restart_tomcat' do
-  cwd ::File.dirname('/home/centos')
+  cwd ::File.dirname('/tmp')
   code <<-EOH
     sudo service tomcat restart
     EOH
