@@ -11,6 +11,12 @@ yum_package 'tomcat' do
 	options "-y"
 end
 
+service 'tomcat' do
+  action [:enable, :start]
+end
+
+
+
 # yum install wget
 yum_package 'wget' do
 	options "-y"
