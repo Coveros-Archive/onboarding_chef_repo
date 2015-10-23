@@ -11,4 +11,4 @@ chef_server_url          "https://ec2-52-23-204-242.compute-1.amazonaws.com/orga
 cookbook_path            ["#{current_dir}/../cookbooks"]
 
 # Amazon AWS
-knife[:aws_credential_file] = "~/aws.txt"
+knife[:aws_credential_file] = "/home/centos/aws.txt"
