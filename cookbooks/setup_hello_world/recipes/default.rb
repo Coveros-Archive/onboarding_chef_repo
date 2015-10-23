@@ -13,6 +13,7 @@ end
 
 service 'tomcat' do
   action [:enable, :start]
+  provider Chef::Provider::Service::Systemd
 end
 
 
