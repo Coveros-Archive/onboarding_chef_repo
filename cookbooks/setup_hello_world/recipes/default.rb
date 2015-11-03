@@ -13,7 +13,7 @@ end
 
 service 'tomcat' do
   action [:enable, :start]
-  provider Chef::Provider::Service::Systemd
+  #provider Chef::Provider::Service::Systemd
 end
 # finding docker image that images init find for platform in kitchen yml
 # sol 2: 
@@ -31,7 +31,7 @@ end
 # end
 # instead do yum packaging
 
-template '/etc/yum.repo.d/Nexus-Hello-World.repo' do
+template '/etc/yum.repos.d/Nexus-Hello-World.repo' do
   source 'Nexus-Hello-World.repo'
   owner 'centos'
   group 'centos'
