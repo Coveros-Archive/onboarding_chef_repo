@@ -14,7 +14,8 @@ end
 service 'tomcat' do
   action [:enable, :start]
 end
-
+# finding docker image that images init find for platform in kitchen yml
+# sol 2: 
 
 
 # yum install wget
@@ -22,11 +23,28 @@ yum_package 'wget' do
 	options "-y"
 end
 
-remote_file '/tmp/hello-world-sample-random-gen-1.0.2-rpm.rpm' do
-  source 'http://ec2-54-210-118-101.compute-1.amazonaws.com:8081/nexus/service/local/repositories/releases/content/com/coveros/hello-world-sample-random-gen/1.0.2/hello-world-sample-random-gen-1.0.2-rpm.rpm'
+# remote_file '/tmp/hello-world-sample-random-gen-1.0.2-rpm.rpm' do
+#   source 'http://ec2-54-210-118-101.compute-1.amazonaws.com:8081/nexus/service/local/repositories/releases/content/com/coveros/hello-world-sample-random-gen/1.0.2/hello-world-sample-random-gen-1.0.2-rpm.rpm'
+#   mode '0755'
+#   action :create
+# end
+# instead do yum packaging
+
+template '/etc/yum.repo.d/Nexus-Hello-World.repo' do
+  source 'Nexus-Hello-World.repo'
+  owner 'centos'
+  group 'centos'
   mode '0755'
-  action :create
 end
+
+bash 'setup_yum' do
+  cwd ::File.dirname('/home/centos')
+  code <<-EOH
+    yum clean all
+    yum install hello-world-sample-random-gen
+    EOH
+end
+
 
 rpm_package 'hello-world-sample-random-gen-1.0.2-rpm' do
   action :install
