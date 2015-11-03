@@ -46,10 +46,10 @@ bash 'setup_yum' do
 end
 
 
-rpm_package 'hello-world-sample-random-gen-1.0.2-rpm' do
-  action :install
-  source '/tmp/hello-world-sample-random-gen-1.0.2-rpm.rpm'
-end
+# rpm_package 'hello-world-sample-random-gen-1.0.2-rpm' do
+#   action :install
+#   source '/tmp/hello-world-sample-random-gen-1.0.2-rpm.rpm'
+# end
 
 bash 'restart_tomcat' do
   cwd ::File.dirname('/tmp')
