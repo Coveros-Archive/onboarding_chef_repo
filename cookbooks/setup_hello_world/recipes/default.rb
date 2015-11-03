@@ -42,7 +42,7 @@ bash 'setup_yum' do
   cwd ::File.dirname('/home/centos')
   code <<-EOH
     yum clean all
-    yum install hello-world-sample-random-gen
+    yum install hello-world
     EOH
 end
 
